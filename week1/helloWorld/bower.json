@@ -1,0 +1,19 @@
+{
+  "name": "helloWorld",
+  "version": "0.0.0",
+  "authors": [
+    "stoyaneft <stoyaneft@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fontawesome": "~4.3.0"
+  }
+}
