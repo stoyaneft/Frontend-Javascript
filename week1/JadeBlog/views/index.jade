@@ -1,23 +1,10 @@
-html
-  head
-    title AS Roma Blog
-    link(href="/css/style.css", rel="stylesheet")
-  body
-    #header
-        h1.top Home Of Romanistas
-        img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTzlxourzbHmTBKUc0tPFdGBNCVlofp4QOmhhr4wKs3ChIY_oBw").logo
+extends layout
 
-    .sidebar
-        | Item 1
-        | Item 2
-
-    hr
-    #posts
-        #post
-            img(src="http://roma.gol.bg/media/files/article/640x480/d46/d46108db9d6ffa19be12652aa9138947.jpeg?55").postImg
-            p.title Roma knocked out of Europe League
-            p.description
-                a(href="post") Roma's wolves continued, albeit on a different stage. With an away goal advantage in tow, Roma capitulated to Fiorentina, falling out of the Europa League in a 3-0 defeat at home.
-
+block content
+    each post, id in posts
+        hr
+        article
+            a.title(href="/"+id+".html")= post.title
+            p.text= post.description
 
 
