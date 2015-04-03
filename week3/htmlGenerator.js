@@ -14,7 +14,7 @@ var Div = function(){
 
     return {
         render: function(){
-            var result = '\n<div>';
+            var result = '<div>';
             childs.forEach(function(child){
                 result += '\n  ';
                 result += child.render();
@@ -22,7 +22,7 @@ var Div = function(){
             if (childs.length > 0){
                 result += '\n';
             }
-            result += '</div\n';
+            result += '</div';
             return result;
         },
 
@@ -73,3 +73,24 @@ var Table = function(tableData){
         }
     };
 };
+
+function Page(root) {
+    this.root = function(){
+        return root;
+    }
+};
+
+Page.prototype.render = function(){
+    return this.root().render();
+}
+
+var p = new Paragraph("Rolling in the deep");
+var div = new Div();
+
+div.addChild(new Div())
+div.addChild(new Div())
+div.addChild(p);
+
+var page = new Page(div);
+
+console.log(page.render());
