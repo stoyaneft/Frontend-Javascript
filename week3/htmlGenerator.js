@@ -28,6 +28,7 @@ var Div = function(){
 
         addChild: function(child){
             childs.push(child);
+            return this;
         }
     };
 };
@@ -83,14 +84,3 @@ function Page(root) {
 Page.prototype.render = function(){
     return this.root().render();
 }
-
-var p = new Paragraph("Rolling in the deep");
-var div = new Div();
-
-div.addChild(new Div())
-div.addChild(new Div())
-div.addChild(p);
-
-var page = new Page(div);
-
-console.log(page.render());
