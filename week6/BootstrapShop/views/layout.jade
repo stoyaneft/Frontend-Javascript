@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        title Ultra Shop
+        link(rel="stylesheet",type="text/css",href="lib/bootstrap/dist/css/bootstrap.css")
+        link(rel="stylesheet",type="text/css",href="css/style.css")
+    body
+        header
+            .navbar.navbar-default
+                .container-fluid
+                    .navbar-header
+                        a.navbar-brand(href="/")
+                            | Ultra Shop
+        section
+            .container-fluid
+                .row
+                    .col-xs-3
+                        include nav.jade
+
+                    .col-xs-9
+                        block content

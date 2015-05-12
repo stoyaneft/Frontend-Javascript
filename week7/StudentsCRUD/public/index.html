@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Students CRUD</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+    <form id="add-student-form">
+        <input type="text" id="student-id" placeholder="Student id">
+        <input type="text" id="student-name" placeholder="Student name">
+        <input type="text" id="student-email" placeholder="Student email">
+        <input type="button" id="submit-button" value="Add student">
+    </form>
+
+    <table id="students-table">
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Name </th>
+                <th> Email </th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+    </table>
+
+    <!-- 3rd party libs -->
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+
+    <!-- our app -->
+    <script type="text/javascript" src="js/client.js"></script>
+
+</body>
+</html>

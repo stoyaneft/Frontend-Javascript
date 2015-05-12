@@ -101,8 +101,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var scores = {
             "Team A": 0,
             "Team B": 0
-          },
-          container = document.getElementById("container");
+          };
+    container = document.getElementById("container");
     renderTeam('Team A', 'left');
     renderTeam('Team B', 'right');
 

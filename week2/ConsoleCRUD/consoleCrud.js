@@ -1,13 +1,16 @@
 "use strict"
 
 var prompt = require('prompt');
+var jf = require('jsonfile');
 
 prompt.start();
 
 function listUsers() {
-    users.forEach(function(user, index, users) {
-        printUser(user);
-    });
+    users = jf.readFileSync(file);
+    console.log(users);
+    // users.forEach(function(user, index, users) {
+    //     printUser(user);
+    //});
 }
 
 function addUser() {
@@ -16,7 +19,8 @@ function addUser() {
         user.id = result.id;
         user.name = result.name;
         user.email = result.email;
-        users.push(user);
+        //users.push(user);
+        jf.writeFileSync(file, user);
         promptMenu();
     });
 }
@@ -104,5 +108,6 @@ function promptMenu() {
 }
 
 var users = [];
+var file = '/users.json';
 console.log('Menu:\nlist\nadd\nget\nremove\nupdate\nquit');
 promptMenu();

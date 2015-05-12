@@ -1,0 +1,14 @@
+{
+    "product1" : {
+        "name": "Wilson US Open Junior Tennis Racquet",
+        "img": "img/product1.jpg",
+        "price": "20$",
+        "description": "Aluminum Racquet | Approved for 10 and under tennis | Strung racquet without a cover"
+    },
+    "product2" : {
+        "name": "Wilson Energy XL Tennis Racquet",
+        "img": "img/product2.jpg",
+        "price": "56$",
+        "decription": "Head size 112 Inch | Length 27.5 Inch | String Pattern 16x19 | no cover"
+    }
+}
