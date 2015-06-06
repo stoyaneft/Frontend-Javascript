@@ -1,9 +1,10 @@
 "use strict"
 
 // dependancies
-var express = require('express')
+var express = require('express');
 var fs = require("fs");
 var posts = require("./posts.json");
+var rankings = require("./ranking.json");
 
 // create app
 var app = express()
@@ -14,18 +15,22 @@ app.use(express.static('public'));
 app.set('view engine', 'jade');
 
 
-// routes
+//routes
 app.get('/', function (req, res) {
   res.render('index', {posts: posts});
+  res.render('rankings', {rankings: rankings});
 })
 
-// listen for files: /post -> /views/post.jade
+//listen for files: /post -> /views/post.jade
 app.get("/:fileName", function(req, res, next){
   if(req.params && req.params.fileName){
     var fileName = req.params.fileName.replace(".html","");
 
+    if (fileName == 'rankings'){
+        res.render('rankings', {rankings: rankings});
+    }
     // if jade file exists
-    if(fs.existsSync(__dirname+"/views/"+fileName+".jade")){
+    else if(fs.existsSync(__dirname+"/views/"+fileName+".jade")){
       res.render(fileName);
     // if post is in posts
     } else if (posts[fileName]) {

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Angular ToDo List</title>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body ng-app ng-controller="MainCtrl">
+        <form ng-submit="addTask(taskName)">
+            <input type="text" placeholder="Enter task" ng-model="taskName">
+            <button type="submit"> Save </button>
+            <button type="button"> Reset </button>
+        </form>
+        <ul>
+            <li ng-repeat="task in tasks track by $index">
+                <input type="checkbox" ng-model="task.finished">
+                <span ng-class="{finished: task.finished}"> {{ task.name }} </span>
+                <button type="button" ng-click="editTask($index)"> Edit </bUtton>
+                <button type="button" ng-click="removeTask($index)"> Delete </bUtton>
+            </li>
+        </ul>
+        <script src="lib/angular/angular.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

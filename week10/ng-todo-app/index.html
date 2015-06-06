@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Angular ToDo List</title>
+    </head>
+    <body ng-app ng-init="tasks=[]">
+        <form ng-submit="tasks.push(task); task=''">
+            <input type="text" placeholder="Enter task" ng-model="task">
+            <button type="submit" ng-submit="tasks.push(task)"> Add </button>
+        </form>
+        <ul>
+            <li ng-repeat="task in tasks track by $index"> {{ task }} </li>
+        </ul>
+        <script src="lib/angular/angular.js"></script>
+    </body>
+</html>
